@@ -45,6 +45,7 @@ namespace Quest
             Console.Write("Please enter your name: ");
 
             string adventurerName = Console.ReadLine();
+            // call constructor and give new name
              Adventurer theAdventurer = new Adventurer(adventurerName);
            
             // Make a new "Adventurer" object using the "Adventurer" class
@@ -81,6 +82,20 @@ namespace Quest
             {
                 Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
             }
+
+            Console.WriteLine("Would you like to play again? yes/no");
+            string answer = Console.ReadLine();
+
+            while(answer.ToUpper() == "YES")
+            {
+                foreach(Challenge challenge in challenges)
+                {
+                    challenge.RunChallenge(theAdventurer);
+                }
+            }
+            Console.WriteLine("Would you like to play again? yes/no");
+             answer = Console.ReadLine();
         }
     }
+
 }
