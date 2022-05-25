@@ -48,6 +48,11 @@ namespace Quest
                 "yellow",
                 "red"
             };
+
+            Hat hat = new Hat
+            {
+                Shiny Hat=
+            }
             Robe robe = new Robe
             {
                 Colors = colors,
@@ -56,7 +61,7 @@ namespace Quest
             Console.Write("Please enter your name: ");
             string adventurerName = Console.ReadLine();
             // call constructor and give new name
-            Adventurer theAdventurer = new Adventurer(adventurerName, robe);
+            Adventurer theAdventurer = new Adventurer(adventurerName, robe, hat);
 
             Console.WriteLine(theAdventurer.GetDescription());
 

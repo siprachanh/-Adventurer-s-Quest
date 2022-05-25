@@ -12,6 +12,7 @@ namespace Quest
 
         // This is a mutable property it has a "get" and a "set"
         //  So it can be read and changed by any code in the application
+        public Hat ShinyHat { get; }
         public int Awesomeness { get; set; }
 
         // A constructor to make a new Adventurer object with a given name
@@ -20,18 +21,19 @@ namespace Quest
             Name = name;
             Awesomeness = 50;
             ColorfulRobe = robe;
+            ShinyHat = hat;
         }
 
-       public string GetDescription()
+        public string GetDescription()
         {
             string colors = "";
-            for(int i = 0; i< ColorfulRobe.Colors.Count; i++)
+            for (int i = 0; i < ColorfulRobe.Colors.Count; i++)
             {
-                if(i == 0)
+                if (i == 0)
                 {
                     colors += $"{ColorfulRobe.Colors[i]}";
                 }
-                else if(i == ColorfulRobe.Colors.Count-1)
+                else if (i == ColorfulRobe.Colors.Count - 1)
                 {
                     colors += $", and {ColorfulRobe.Colors[i]}";
                 }
@@ -41,9 +43,9 @@ namespace Quest
                 }
             }
 
-            return $"{Name} is wearing a {colors} color robe of length {ColorfulRobe.Length}.";
+            return $"{Name} is wearing a {colors} color robe of length {ColorfulRobe.Length}, as well as a {ShinyHat.ShininessDescription()}.";
         }
-            // , as well as a {AdventurerHat.ShininessDescription()} hat.";
+
 
         // This method returns a string that describes the Adventurer's status
         // Note one way to describe what this method does is:
