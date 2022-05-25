@@ -32,7 +32,7 @@ namespace Quest
 
             int numAnswer;
             bool isNumber = int.TryParse(answer, out numAnswer);
-
+            // try and parse as int, num will eval to true and output to numAns
             Console.WriteLine();
             if (isNumber && numAnswer == _correctAnswer)
             {
